@@ -1,6 +1,4 @@
-var entity = {};
-
-entity.MapType = {
+LIFE.entity.MapType = {
   EMPTY: 0,
   PLANE: 1,
   TENT: 2,
@@ -10,7 +8,7 @@ entity.MapType = {
   ENEGY: 6
 };
 
-entity.ActionType = {
+LIFE.entity.ActionType = {
   NONE: 0,
   ADVENT: 1,
   GROWTH: 2,
@@ -20,7 +18,7 @@ entity.ActionType = {
 }
 
 
-entity.User = {
+LIFE.entity.User = {
   initialize: function(name) {
     return {
       name: name,
@@ -35,7 +33,7 @@ entity.User = {
 };
 
 
-entity.UserMap = {
+LIFE.entity.UserMap = {
   initialize: function() {
     var e = entity.MapType.EMPTY;
     var p = entity.MapType.PLANE;
@@ -57,10 +55,9 @@ entity.UserMap = {
   }
 };
 
-entity.UserHistory = {
+LIFE.entity.UserHistory = {
   initialize: function() {
     return [];
   }
 };
 
-LIFE.entity = entity;

@@ -1,4 +1,4 @@
-var config = {};
 
 
-Life.config = config;
+Life.config = {
+};
