@@ -1,1 +1,2 @@
 var LIFE = {};
+var User = {};

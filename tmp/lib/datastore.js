@@ -2,7 +2,7 @@ var getData = function(key_name) {
 
   var data = $.cookie(key_name);
   if (data === undefined) {
-    return {};
+    return null;
   }
   return JSON.parse(data);
 };

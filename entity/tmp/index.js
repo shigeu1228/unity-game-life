@@ -51,8 +51,55 @@ entity.UserMap = {
   }
 };
 
-entity.userHistory = {
-  initialize: function() {}
+entity.UserHistory = {
+  initialize: function() {
+    return [];
+  }
 };
 
 LIFE.entity = entity;
+
+
+
+User = {
+  self: this,
+  user: null,
+  userMap: null,
+  userHistory: null,
+
+
+  getUser: function() {
+    if (self.user) {
+      return self.user;
+    }
+    self.user = getData('user');
+    return self.user;
+  },
+  getUserMap: function() {
+    if (self.userMap) {
+      return self.userMap;
+    }
+    self.userMap = getData('userMap');
+    return self.userMap;
+  },
+  getUserHistory: function() {
+    if (self.userHistory) {
+      return self.userHistory;
+    }
+    self.userHistory = getData('userHistory');
+    return self.userHistory;
+  },
+
+  updateUser: function(data) {
+    self.user = data;
+    setData('user', data);
+  },
+  updateUserMap: function(data) {
+    self.userMap = data;
+    setData('userMap', data);
+  },
+  updateUserHistory: function(data) {
+    self.userHistory = data;
+    setData('userHistory', data);
+  }
+};

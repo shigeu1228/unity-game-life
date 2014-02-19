@@ -9,18 +9,25 @@ $(document).ready(function(){
 
 
 var test = function() {
+  var user = User.getUser();
+  var userMap, userHistory;
 
-  console.log(LIFE.entity.UserMap.initialize());
+  if (user === null) {
+    // create new user
+    user = LIFE.entity.User.initialize('sampleさん');
+    userMap = LIFE.entity.UserMap.initialize();
+    userHistory = LIFE.entity.UserHistory.initialize();
 
-  var userData = {
-    name: 'sample01',
-    grade: 150,
-    money: 1000
-  };
+    console.log("はじめまして");
+  } else {
 
-  setData('userData', userData);
-  setTimeout(function() {
-    var data = getData('userData');
-    console.log("name: " + data.name);
-  }, 1000);
+    console.log("こんにちは、" + user.name + "さん");
+
+  }
+  // prepare display
+
+
+  User.updateUser(user);
+  User.updateUserMap(userMap);
+  User.updateUserHistory(userHistory);
 };
