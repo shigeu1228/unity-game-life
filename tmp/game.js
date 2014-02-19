@@ -9,6 +9,9 @@ $(document).ready(function(){
 
 
 var test = function() {
+
+  console.log(LIFE.entity.UserMap.initialize());
+
   var userData = {
     name: 'sample01',
     grade: 150,
