@@ -5,17 +5,28 @@ entity.MapType = {
   PLANE: 1,
   TENT: 2,
   HOUSE: 3,
-  CITY: 4
+  CITY: 4,
+  ENEGY: 5
 };
+
+entity.ActionType = {
+  NONE: 0,
+  ADVENT: 1,
+  GROWTH: 2,
+  RIOT: 3,
+  METEO: 4
+}
 
 
 entity.User = {
   initialize: function(name) {
     return {
       name: name,
-      point: 0,
+      money: 0,
+      enegy: 0,
       time: {
-        create: Date.now()
+        create: Date.now(),
+        access: Date.now()
       }
     };
   }
@@ -38,6 +49,10 @@ entity.UserMap = {
       [e, e, e, e, e, e, e, e, e]
     ];
   }
+};
+
+entity.userHistory = {
+  initialize: function() {}
 };
 
 LIFE.entity = entity;

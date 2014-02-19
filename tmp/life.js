@@ -1,1 +1,1 @@
-LIFE = {};
+var LIFE = {};
