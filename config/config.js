@@ -6,7 +6,10 @@ LIFE.config = {
   ADVENT_TRY_COUNT: 100,
   GROWTH_TRY_COUNT: 30,
   GROWTH_TRY_COUNT: 20,
+  ADD_ENEGY_POINT: 500,
+  MAX_ENEGY: 1000,
   NAME: {
+    PLANE: '土地',
     TENT: 'テント',
     HOUSE: '家',
     BILL: 'ビル',

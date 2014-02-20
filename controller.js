@@ -13,6 +13,7 @@ var load = function() {
   var userMap, userHistory;
 
   if (user === null) {
+  //if (true) {
     // create new user
     var name = prompt("ようこそ！\n名前をおしえてね！");;
     var count = 0;
@@ -66,8 +67,11 @@ var logic = function(user, callback) {
   }
 
   for (var i = 0; i < actionCount; i++) {
+    addEnegy();
     var actionType = chooseAction();
     logicAction(actionType, checkActionTime.times[i]);
+    reduceEnegy();
+    correctEnegy();
   }
 
   return callback();

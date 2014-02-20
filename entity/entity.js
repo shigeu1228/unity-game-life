@@ -38,11 +38,12 @@ LIFE.entity.UserMap = {
   initialize: function() {
     var e = LIFE.entity.MapType.EMPTY;
     var p = LIFE.entity.MapType.PLANE;
+    var g = LIFE.entity.MapType.ENEGY;
     return [
       [e, e, e, e, e, e, e, e, e, e, e, e, e],
       [e, e, e, e, e, e, e, e, e, e, e, e, e],
       [e, e, e, e, e, e, e, e, e, e, e, e, e],
-      [e, e, e, e, e, e, p, e, e, e, e, e, e],
+      [e, e, e, e, e, e, g, e, e, e, e, e, e],
       [e, e, e, e, e, p, p, p, e, e, e, e, e],
       [e, e, e, e, p, p, p, p, p, e, e, e, e],
       [e, e, e, p, p, p, p, p, p, p, e, e, e],
