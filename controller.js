@@ -5,6 +5,26 @@ $(document).ready(function(){
   else {
     alert("Cookieを有効にしてください");
   }
+
+
+
+  /////
+
+  $('#bpb').on('click', function() {
+    var x = $('#bpx').val();
+    var y = $('#bpy').val();
+    var result = buyPlane();
+    console.log(result);
+  });
+
+  $('#beb').on('click', function() {
+    var x = $('#bex').val();
+    var y = $('#bey').val();
+    var result = buyEnegy();
+    console.log(result);
+  });
+
+  /////
 });
 
 
@@ -13,6 +33,7 @@ var load = function() {
   var userMap, userHistory;
 
   if (user === null) {
+  //if (true) {
     // create new user
     var name = prompt("ようこそ！\n名前をおしえてね！");;
     var count = 0;
@@ -66,8 +87,11 @@ var logic = function(user, callback) {
   }
 
   for (var i = 0; i < actionCount; i++) {
+    addEnegy();
     var actionType = chooseAction();
     logicAction(actionType, checkActionTime.times[i]);
+    reduceEnegy();
+    correctEnegy();
   }
 
   return callback();
