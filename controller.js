@@ -5,6 +5,26 @@ $(document).ready(function(){
   else {
     alert("Cookieを有効にしてください");
   }
+
+
+
+  /////
+
+  $('#bpb').on('click', function() {
+    var x = $('#bpx').val();
+    var y = $('#bpy').val();
+    var result = buyPlane();
+    console.log(result);
+  });
+
+  $('#beb').on('click', function() {
+    var x = $('#bex').val();
+    var y = $('#bey').val();
+    var result = buyEnegy();
+    console.log(result);
+  });
+
+  /////
 });
 
 
