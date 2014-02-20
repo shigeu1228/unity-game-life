@@ -1,3 +1,4 @@
+LIFE.entity = {};
 LIFE.entity.MapType = {
   EMPTY: 0,
   PLANE: 1,
@@ -35,8 +36,8 @@ LIFE.entity.User = {
 
 LIFE.entity.UserMap = {
   initialize: function() {
-    var e = entity.MapType.EMPTY;
-    var p = entity.MapType.PLANE;
+    var e = LIFE.entity.MapType.EMPTY;
+    var p = LIFE.entity.MapType.PLANE;
     return [
       [e, e, e, e, e, e, e, e, e, e, e, e, e],
       [e, e, e, e, e, e, e, e, e, e, e, e, e],

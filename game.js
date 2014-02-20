@@ -1,6 +1,6 @@
 $(document).ready(function(){
   if (window.navigator.cookieEnabled) {
-    test();
+    load();
   }
   else {
     alert("Cookieを有効にしてください");
@@ -8,26 +8,67 @@ $(document).ready(function(){
 });
 
 
-var test = function() {
+var load = function() {
   var user = User.getUser();
   var userMap, userHistory;
 
   if (user === null) {
     // create new user
-    user = LIFE.entity.User.initialize('sampleさん');
+    var name = prompt("ようこそ！\n名前をおしえてね！");;
+    var count = 0;
+    while (!name && count < 5) {
+      count++;
+    }
+    name = name || 'オーナーさん';
+
+    user = LIFE.entity.User.initialize(name);
     userMap = LIFE.entity.UserMap.initialize();
     userHistory = LIFE.entity.UserHistory.initialize();
 
-    console.log("はじめまして");
+    User.updateUser(user);
+    User.updateUserMap(userMap);
+    User.updateUserHistory(userHistory);
+
+    //location.href = location.href;
   } else {
 
-    console.log("こんにちは、" + user.name + "さん");
+    // on cache
+    User.getUserMap();
+    User.getUserHistory();
 
+    logic(user, function() {
+      user = User.getUser();
+      userMap = User.getUserMap();
+      userHistory = User.getUserHistory();
+
+      User.updateUser(user);
+      User.updateUserMap(userMap);
+      User.updateUserHistory(userHistory);
+
+      console.log(user);
+      console.log(userMap);
+      console.log(userHistory);
+
+      // TODO send for unity
+    });
   }
-  // prepare display
+};
 
 
+var logic = function(user, callback) {
+  var checkActionTime = countCheckTime(user.time.access);
+  var actionCount = checkActionTime.count || 0;
+  console.log(actionCount);
+  user.time.access = Date.now();
   User.updateUser(user);
-  User.updateUserMap(userMap);
-  User.updateUserHistory(userHistory);
+  if (actionCount === 0) {
+    return callback();
+  }
+
+  for (var i = 0; i < actionCount; i++) {
+    var actionType = chooseAction();
+    logicAction(actionType, checkActionTime.times[i]);
+  }
+
+  return callback();
 };
