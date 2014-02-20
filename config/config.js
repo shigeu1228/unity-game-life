@@ -8,6 +8,8 @@ LIFE.config = {
   GROWTH_TRY_COUNT: 20,
   ADD_ENEGY_POINT: 500,
   MAX_ENEGY: 1000,
+  ENEGY_PRICE: 1000,
+  PLANE_PRICE: 250,
   NAME: {
     PLANE: '土地',
     TENT: 'テント',
