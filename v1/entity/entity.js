@@ -25,6 +25,7 @@ LIFE.entity.User = {
       name: name,
       money: 0,
       enegy: 0,
+      v: LIFE.v,
       time: {
         create: Date.now(),
         access: Date.now()

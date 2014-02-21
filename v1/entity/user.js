@@ -27,6 +27,16 @@ User = {
     return self.userHistory;
   },
 
+  setUser: function(data) {
+    self.user = data;
+  },
+  setUserMap: function(data) {
+    self.userMap = data;
+  },
+  setUserHistory: function(data) {
+    self.userHistory = data;
+  },
+
   updateUser: function(data) {
     self.user = data;
     setData('ugl_user', data);

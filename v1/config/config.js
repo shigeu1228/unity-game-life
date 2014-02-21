@@ -9,7 +9,7 @@ LIFE.config = {
   ADD_ENEGY_POINT: 500,
   MAX_ENEGY: 1000,
   ENEGY_PRICE: 1000,
-  PLANE_PRICE: 250,
+  PLANE_PRICE: 400,
   NAME: {
     PLANE: '土地',
     TENT: 'テント',
