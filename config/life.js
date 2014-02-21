@@ -1,2 +1,0 @@
-var LIFE = {};
-var User = {};

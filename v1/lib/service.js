@@ -193,7 +193,7 @@ var chooseAction = function() {
     var number = countNumberOfPeople();
     var money = number * LIFE.config.NUMBER.MONEY_RATE;
     user.money += money;
-    User.updateUser(user);
+    User.setUser(user);
     var text = '住民が' + money + '円をわけてくれました！';
     createHistory(text, time);
     return;
@@ -210,7 +210,7 @@ var addEnegy = function() {
   var number = countNumberOfEnegy();
   var add = LIFE.config.ADD_ENEGY_POINT * number;
   user.enegy = user.enegy + add;
-  User.updateUser(user);
+  User.setUser(user);
 };
 
 /**
@@ -220,7 +220,7 @@ var reduceEnegy = function() {
   var user = User.getUser();
   var reduce = countNumberOfPeople();
   user.enegy = user.enegy - reduce;
-  User.updateUser(user);
+  User.setUser(user);
 };
 
 var correctEnegy = function() {
@@ -231,11 +231,11 @@ var correctEnegy = function() {
     var after = Math.min(user.enegy, max);
     if (user.enegy !== after) {
       user.enegy = after;
-      User.updateUser(user);
+      User.setUser(user);
     }
   } else if (user.enegy < 0) {
     user.enegy = 0;
-    User.updateUser(user);
+    User.setUser(user);
   }
 }
 
@@ -297,7 +297,7 @@ var createHistory = function(text, time) {
   if (userHistory.length > LIFE.config.HISTORY_LENGTH) {
     userHistory.splice(LIFE.config.HISTORY_LENGTH, (userHistory.length - LIFE.config.HISTORY_LENGTH));
   }
-  User.updateUserHistory(userHistory);
+  User.setUserHistory(userHistory);
 };
 
 
