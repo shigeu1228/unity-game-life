@@ -192,6 +192,14 @@ var chooseAction = function() {
     var user = User.getUser();
     var number = countNumberOfPeople();
     var money = number * LIFE.config.NUMBER.MONEY_RATE;
+
+    if (money === 0) {
+      return;
+    }
+
+    money += Math.random() * (Math.max((money / 10), 1);
+    money = Math.ceil(money);
+
     user.money += money;
     User.setUser(user);
     var text = '住民が' + money + '円をわけてくれました！';
