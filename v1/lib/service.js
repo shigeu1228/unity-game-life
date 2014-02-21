@@ -197,7 +197,7 @@ var chooseAction = function() {
       return;
     }
 
-    money += Math.random() * (Math.max((money / 10), 1);
+    money += Math.random() * Math.max((money / 10), 1);
     money = Math.ceil(money);
 
     user.money += money;
